@@ -8,6 +8,16 @@ def clear_blank_space():
 clear_blank_space()
 
 # 输入一个字符串，判断是否为回文
+# 回文就是正读和反读都一样的字符串，比如abccba、noon
+# 思路：判断反转后的字符串和原来字符串是否一样
+str_first = input('请输入一个字符串：\n')
+# 将字符串反转，切片[start:end:step]
+str_last = str_first[::-1]
+
+if str_first == str_last:
+    print('你输入的字符串是回文')
+else:
+    print('你输入的字符串不是回文')
 
 
 # 给出一个整型值，能够返回该值的英文，例如输入89，返回eighty-nine，限定值在0~100
