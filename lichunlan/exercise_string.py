@@ -62,10 +62,10 @@ date_tuple = (31,28,31,30,31,30,31,31,30,31,30,31)
 def change_date(date):
     return datetime.datetime.strptime(date, '%m/%d/%Y')
 # 分别获取年、月、日
-def get_year(date1):
-    year = date1.year
-    month = date1.month
-    day = date1.day
+def get_year(date):
+    year = date.year
+    month = date.month
+    day = date.day
     return year,month,day
 # 处理数据
 def get_date(date1,date2):

@@ -55,15 +55,14 @@ def is_division():
 
 # 判断一个数字是否为素数（只能被1和本身整除的数）
 def is_prime_number():
-    num = int(input('请输入一个数判断是否为素数：'))
+    num = int(input('请输入一个数判断是否为素数：\n'))
+    result_list = []
     for i in range(2,num):
-        if num % i == 0:
-            print('%d不是一个素数' % num)
-            break
-        else:
-            print('%d是一个素数' % num)
-            break
-
+        result_list.append(num % i)
+    if 0 in result_list:
+        print('%d不是素数'% num)
+    else:
+        print('%d是素数'% num)
 
 '''
 生成一个有N个元素的由随机数n组成的列表，
@@ -71,9 +70,10 @@ def is_prime_number():
 然后再随机从这个列表中取x（1<=x<=100）个 随机数出来，
 对它们排序，然后显示这个子集。
 '''
+
 def study_random():
     # 生成一个有N个元素的由随机数n组成的列表
-    list_n = [random.randint(0,31**2-1) for i in range(random.randint(1,100))] # 列表推导式
+    list_n = [random.randint(0,2**31-1) for i in range(random.randint(1,100))] # 列表推导式
     print(list_n)
     # 随机从上面列表中取x（1<=x<=100）个 随机数
     list_x =[]  # TODO 随机数取值区间是否包含边界值？
@@ -83,6 +83,30 @@ def study_random():
     # 升序排列
     list_x.sort()
     print(list_x)
+
+#import random
+# def study_random():
+#     # 列表有N个元素,元素的值为随机数n
+#     N = random.randint(2,10)
+#     list_N = []
+#     print('列表list_N有%d个元素：' % N)
+#     for i in range(N):
+#         n = random.randint(0, 2**31-1) # 每次循环生成一个随机数n
+#         list_N.append(n) # 将n放入列表中
+#     print('list_N为：{0}'.format(list_N))
+#
+#     # 从列表list_N中取x个数，x是一个随机数
+#     x = random.randint(1,100)
+#     list_x = []
+#     print(x)
+#     for i in range(x):
+#         # 从列表list_N随机取一个数
+#         a = random.choice(list_N)
+#         list_x.append(a)
+#     print('list_x为：{0}'.format(list_x))
+#
+# if __name__ == '__main__':
+#     study_random()
 
 '''
 给定一个整数数组 nums 和一个目标值 target，
